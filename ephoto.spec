@@ -1,6 +1,6 @@
 %define	_snap	20060223
 Summary:	A professional slideshow creator
-Summary(pl.UTF-8):   Profesjonalne narzędzie do tworzenia slajdów
+Summary(pl.UTF-8):	Profesjonalne narzędzie do tworzenia slajdów
 Name:		ephoto
 Version:	0.1
 Release:	0.%{_snap}.1
