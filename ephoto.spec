@@ -1,6 +1,6 @@
 %define	_snap	20060223
 Summary:	A professional slideshow creator
-Summary(pl):	Profesjonalne narzêdzie do tworzenia slajdów
+Summary(pl.UTF-8):   Profesjonalne narzÄ™dzie do tworzenia slajdÃ³w
 Name:		ephoto
 Version:	0.1
 Release:	0.%{_snap}.1
@@ -18,9 +18,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Ephoto is a professional slideshow creator with audio support.
 
-%description -l pl
-Ephoto to profesjonalne narzêdzie do tworzenia slajdów z obs³ug±
-d¼wiêku.
+%description -l pl.UTF-8
+Ephoto to profesjonalne narzÄ™dzie do tworzenia slajdÃ³w z obsÅ‚ugÄ…
+dÅºwiÄ™ku.
 
 %prep
 %setup -q -n %{name}
