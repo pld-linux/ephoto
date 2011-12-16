@@ -1,0 +1,33 @@
+--- ephoto-0.1.1.55225/src/bin/ephoto_thumb_browser.c.orig	2010-12-01 14:55:41.000000000 +0100
++++ ephoto-0.1.1.55225/src/bin/ephoto_thumb_browser.c	2011-12-16 15:42:19.040162762 +0100
+@@ -533,7 +533,7 @@ ephoto_thumb_browser_add(Ephoto *ephoto,
+         ERR("no toolbar in layout!");
+         goto error;
+      }
+-   elm_toolbar_homogenous_set(tb->toolbar, EINA_FALSE);
++   elm_toolbar_homogeneous_set(tb->toolbar, EINA_FALSE);
+    elm_toolbar_mode_shrink_set(tb->toolbar, ELM_TOOLBAR_SHRINK_MENU);
+    elm_toolbar_menu_parent_set(tb->toolbar, parent);
+ 
+--- ephoto-0.1.1.55225/src/bin/ephoto_flow_browser.c.orig	2010-11-15 11:58:43.000000000 +0100
++++ ephoto-0.1.1.55225/src/bin/ephoto_flow_browser.c	2011-12-16 15:42:09.283495769 +0100
+@@ -911,7 +911,7 @@ ephoto_flow_browser_add(Ephoto *ephoto,
+         ERR("no toolbar in layout!");
+         goto error;
+      }
+-   elm_toolbar_homogenous_set(fb->toolbar, EINA_FALSE);
++   elm_toolbar_homogeneous_set(fb->toolbar, EINA_FALSE);
+    elm_toolbar_mode_shrink_set(fb->toolbar, ELM_TOOLBAR_SHRINK_MENU);
+    elm_toolbar_menu_parent_set(fb->toolbar, parent);
+ 
+--- ephoto-0.1.1.55225/src/bin/ephoto_preferences.c.orig	2010-11-11 14:04:59.000000000 +0100
++++ ephoto-0.1.1.55225/src/bin/ephoto_preferences.c	2011-12-16 15:41:53.956828590 +0100
+@@ -33,7 +33,7 @@ ephoto_show_preferences(Ephoto *em)
+                 elm_win_inwin_content_set(o, box);
+ 
+                 tb = elm_toolbar_add(box);
+-                elm_toolbar_homogenous_set(tb, EINA_FALSE);
++                elm_toolbar_homogeneous_set(tb, EINA_FALSE);
+                 evas_object_size_hint_align_set(tb, EVAS_HINT_FILL, 0.5);
+ 
+                 elm_box_pack_end(box, tb);
