@@ -18,7 +18,7 @@ BuildRequires:	efreet-devel
 BuildRequires:	eio-devel
 BuildRequires:	elementary-devel >= 0.8.0
 BuildRequires:	ethumb-devel
-BuildRequires:	gettext-devel >= 0.12.1
+BuildRequires:	gettext-tools >= 0.12.1
 BuildRequires:	libexif-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
