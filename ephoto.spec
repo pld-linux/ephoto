@@ -1,27 +1,15 @@
 Summary:	A professional slideshow creator
 Summary(pl.UTF-8):	Profesjonalne narzędzie do tworzenia slajdów
 Name:		ephoto
-Version:	0.1.1.55225
-Release:	1
+Version:	1.6.0
+Release:	0.1
 License:	BSD
 Group:		Applications/Multimedia
-Source0:	http://download.enlightenment.org/snapshots/2010-12-03/%{name}-%{version}.tar.bz2
-# Source0-md5:	67f2e817716ffc86ba1c653b6177813a
-Patch0:		%{name}-elm-update.patch
+Source0:	https://download.enlightenment.org/rel/apps/ephoto/%{name}-%{version}.tar.xz
+# Source0-md5:	d855bcd9fadbd315e5fb2ea19b594b61
 URL:		http://trac.enlightenment.org/e/wiki/Ephoto
-BuildRequires:	autoconf >= 2.60
-BuildRequires:	automake >= 1.6
-BuildRequires:	ecore-file-devel
-BuildRequires:	edje
-BuildRequires:	edje-devel
-BuildRequires:	efreet-devel
-BuildRequires:	eio-devel
-BuildRequires:	elementary-devel >= 0.8.0
-BuildRequires:	ethumb-devel
-BuildRequires:	gettext-tools >= 0.12.1
+BuildRequires:	efl-devel
 BuildRequires:	libexif-devel
-BuildRequires:	libtool
-BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,30 +21,31 @@ dźwięku.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
-%{__gettextize}
-%{__libtoolize}
-%{__aclocal} -I m4
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure \
-	--disable-silent-rules
-%{__make}
+%meson build
+
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
+
+%{__mv} $RPM_BUILD_ROOT{%{_iconsdir},%{_pixmapsdir}}/ephoto.png
+
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc AUTHORS COPYING ChangeLog README TODO
+%doc AUTHORS COPYING* README TODO
 %attr(755,root,root) %{_bindir}/%{name}
+%dir %{_libdir}/ephoto
+%attr(755,root,root) %{_libdir}/ephoto/ephoto_thumbnail
 %{_datadir}/%{name}
+%{_desktopdir}/ephoto.desktop
+%{_pixmapsdir}/ephoto.png
