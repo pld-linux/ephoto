@@ -2,7 +2,7 @@ Summary:	A professional slideshow creator
 Summary(pl.UTF-8):	Profesjonalne narzędzie do tworzenia slajdów
 Name:		ephoto
 Version:	1.6.0
-Release:	0.1
+Release:	1
 License:	BSD
 Group:		Applications/Multimedia
 Source0:	https://download.enlightenment.org/rel/apps/ephoto/%{name}-%{version}.tar.xz
