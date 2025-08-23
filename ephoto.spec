@@ -10,6 +10,9 @@ Source0:	https://download.enlightenment.org/rel/apps/ephoto/%{name}-%{version}.t
 URL:		http://trac.enlightenment.org/e/wiki/Ephoto
 BuildRequires:	efl-devel
 BuildRequires:	libexif-devel
+BuildRequires:	meson
+BuildRequires:	ninja >= 1.5
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
